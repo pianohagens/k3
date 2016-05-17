@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>MoveFocus</title>
+</head>
+
+<body>
+<script type="text/javascript">
+    function input_onchange(me){ 
+        if (me.value.length != me.maxlength){
+            return;
+        }
+        var i;
+        var elements = me.form.elements;
+        for (i=0, numElements=elements.length; i<numElements; i++) {
+            if (elements[i]==me){
+                break;
+            }
+        }
+        elements[i+1].focus();
+    }
+</script>
+<form action="post.php" method="post" accept-charset="utf-8">
+    <input type="text" value="" id="first" size="4" maxlength="4"
+        onchange="input_onchange(this)"
+    /> -
+    <input type="text" value="" id="second" size="4" maxlength="4"
+        onchange="input_onchange(this)"
+    /> -
+    <input type="text" value="" id="third" size="4" maxlength="4"
+        onchange="input_onchange(this)"
+    /> -
+    <input type="text" value="" id="fourth" size="4" maxlength="4"
+        onchange="input_onchange(this)"
+    /> -
+    <p><input type="submit" value="Send Credit Card"></p>
+</form>
+</body>
+</html>
